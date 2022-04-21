@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source config.sh
+source Config.sh
 
 mkdir build
 cp data/datapack build/datapack
@@ -11,9 +11,9 @@ do
   sed -i 's/old-text/new-text/g' $file
 done
 
-for material in materials
+for mat in materials
 do
-  echo "Processing $material"
+  echo "Processing $mat"
   cp "build/datapack/LuckyWorld/data/lucky_loot/loot_tables/{material}_equip.json" "build/datapack/LuckyWorld/data/lucky_loot/loot_tables/${material}_equip.json"
   file="build/datapack/LuckyWorld/data/lucky_loot/loot_tables/${material}_equip.json"
   sed -i "s/{tool_material}/${material[1]}/g" $file

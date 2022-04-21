@@ -21,3 +21,5 @@ do
   sed -i "s/{level}/${!material[3]}/g" $file
   sed -i "s/{chance}/${!material[4]}/g" $file
 done
+
+zip LuckyWorld.zip /build/datapack/

@@ -11,13 +11,13 @@ do
   sed -i 's/old-text/new-text/g' $file
 done
 
-for mat in materials
+for material in equip_materials
 do
-  echo "Processing $mat"
-  cp "build/datapack/LuckyWorld/data/lucky_loot/loot_tables/{material}_equip.json" "build/datapack/LuckyWorld/data/lucky_loot/loot_tables/${material}_equip.json"
-  file="build/datapack/LuckyWorld/data/lucky_loot/loot_tables/${material}_equip.json"
-  sed -i "s/{tool_material}/${material[1]}/g" $file
-  sed -i "s/{armor_material}/${material[2]}/g" $file
-  sed -i "s/{level}/${material[3]}/g" $file
-  sed -i "s/{chance}/${material[4]}/g" $file
+  echo "Processing ${!material}"
+  cp "build/datapack/LuckyWorld/data/lucky_loot/loot_tables/{material}_equip.json" "build/datapack/LuckyWorld/data/lucky_loot/loot_tables/${!material}_equip.json"
+  file="build/datapack/LuckyWorld/data/lucky_loot/loot_tables/${!material}_equip.json"
+  sed -i "s/{tool_material}/${!material[1]}/g" $file
+  sed -i "s/{armor_material}/${!material[2]}/g" $file
+  sed -i "s/{level}/${!material[3]}/g" $file
+  sed -i "s/{chance}/${!material[4]}/g" $file
 done

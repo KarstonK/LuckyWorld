@@ -50,7 +50,6 @@ do
   block=${block}[@]
   block=(${!block})
   toAdd=''
-  entryBuffer=''
   echo 312: ${#block[@]}
   for (( i=0; i<$(( ${#block[@]} / 3 )); ++i)) # repeat for each block drop
   do
@@ -64,9 +63,9 @@ do
       then
         if [ ${!count} == 1 ]
         then
-          entryBuffer+=${itemEntrySingle}
+          entryBuffer=${itemEntrySingle}
         else
-          entryBuffer+=${itemEntry}
+          entryBuffer=${itemEntry}
         fi
         entryBuffer=$(sed "s/{weight}/${!weight}/g" ${entryBuffer})
         if [ ${!quality} != 0 ]
@@ -75,8 +74,9 @@ do
         fi
         if [ ${!count} != 1 ]
         then
-          toAdd=$(sed "s/{count}/${!count}/g" ${entryBuffer})
+          entryBuffer=$(sed "s/{count}/${!count}/g" ${entryBuffer})
         fi
+        toAdd+=${entryBuffer}
       elif [ ${block[(( $i * 3 - 3 ))]} -eq 1 ]
       then
         entryBuffer+=$(sed "s/{weight}/${!type}/g" ${lootTableEntry})

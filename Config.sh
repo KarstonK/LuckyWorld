@@ -18,9 +18,6 @@ custom_items=(kb_stick)
 kb_stick=(stick 0 'Knockback Stick' minecraft:knockback:10)
 fire_stick=(blaze_rod 0 'Firey Stick' minecraft:fire_aspect:5)
 
-lots_weight=( 48 12 3  1)
-lots_quality=(-8 5  2  1)
-lots_count=(  1  4  16 64)
 extra_weight=64
 extra_quality=16
 extra_count=1
@@ -44,3 +41,9 @@ iron_ore=(0 lots 3 iron_ingot 1 extra 1 lucky_equip:iron_equip)
 copper_ore=(0 lots 3 copper_ingot 1 extra 1 lucky_equip:soft_iron_equip)
 gold_ore=(0 lots 3 gold_ingot 1 extra 1 lucky_equip:gold_equip)
 diamond_ore=(0 lots 1 diamond 1 extra 1 lucky_equip:diamond_equip)
+
+progressive_weight=( 48 12 3  1)
+progressive_quality=(-8 5  2  1)
+progressive_count=(  1  4  16 64)
+progressive_items=(oak_log spruce_log birth_log jungle_log acacia_log dark_oak_log crimson_stem warped_stem cobblestone cobbled_deepslate obsidian iron_ingot \
+                   copper_ingot gold_ingot diamond)
